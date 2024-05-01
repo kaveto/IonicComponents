@@ -1,0 +1,77 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Checkbox</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen
+             class="component-content">
+  <div class="ion-padding-start ion-padding-end">
+    <p><b>Checkboxes</b> allow the selection of multiple options from a set of options. They appear as checked (ticked)
+      when activated. Clicking
+      on a checkbox will toggle the checked property. They can also be checked programmatically by setting the checked
+      property.
+    </p>
+  </div>
+
+  <ion-list class="home-list"
+            lines="full">
+    <ion-item>
+      <ion-label>
+        <a href="https://ionicframework.com/docs/api/checkbox#checkboxchangeeventdetail"
+           target="_blank">
+          Checkbox API Docs
+        </a>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <a href="https://ionicframework.com/docs/api"
+           target="_blank">
+          UI Cimponent Docs
+        </a>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div class="ion-padding-start ion-padding-end ion-padding-bottom">
+    <ion-list lines="full">
+      <ion-list-header>
+        <ion-label>
+          Characters
+        </ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-checkbox color="primary"
+                      checked
+                      label-placement="end"
+                      justify="start">Jon Snow</ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox color="dark"
+                      checked
+                      label-placement="end"
+                      justify="end">Daenerys Targaryen</ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox disabled
+                      label-placement="end"
+                      justify="fixed">Arya Stark</ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox color="secondary"
+                      label-placement="end"
+                      justify="stacked">Tyrion Lannister</ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox color="danger"
+                      checked
+                      label-placement="end"
+                      justify="start">Sansa Stark</ion-checkbox>
+      </ion-item>
+
+    </ion-list>
+  </div>
+</ion-content>

@@ -1,0 +1,94 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Picker & Progress Bar</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen
+             class="ion-padding">
+
+  <div>
+    <h3><b>Picker</b></h3>
+    <p>A <b>Picker</b> displays one or more columns with options for users to choose from.</p>
+    <a href="https://ionicframework.com/docs/api/picker"
+       target="_blank">
+      Picker API Docs
+    </a>
+    <p>The following is an example for Picker.</p>
+    <ion-picker>
+      <ion-picker-column value="red">
+        <ion-picker-column-option value=""
+                                  disabled="true">--</ion-picker-column-option>
+        <ion-picker-column-option value="red">Red</ion-picker-column-option>
+        <ion-picker-column-option value="blue">Blue</ion-picker-column-option>
+        <ion-picker-column-option value="green">Green</ion-picker-column-option>
+      </ion-picker-column>
+    </ion-picker>
+  </div>
+
+  <ion-item></ion-item>
+  <div>
+    <h3><b>Progress Bar</b></h3>
+    <p><b>Progress bars</b> inform users about the status of ongoing processes, such as loading an app, submitting a
+      form, or saving updates. There
+      are two types of progress bars: determinate and indeterminate.</p>
+    <br>
+    <a href="https://ionicframework.com/docs/api/progress-bar"
+       target="_blank">
+      Progress Bar API Docs
+    </a>
+    <br>
+    <p>The following is an example for Progress bars.</p>
+    <ion-list>
+      <ion-list-header>
+        <ion-label>Determinate</ion-label>
+      </ion-list-header>
+      <ion-progress-bar value="0.2"></ion-progress-bar>
+    </ion-list>
+
+    <ion-list>
+
+      <ion-list-header>
+        <ion-label>
+          Indeterminate
+        </ion-label>
+      </ion-list-header>
+      <ion-progress-bar type="indeterminate"></ion-progress-bar>
+
+      <ion-list-header>
+        <ion-label>
+          Indeterminate (reversed)
+        </ion-label>
+      </ion-list-header>
+      <ion-progress-bar type="indeterminate"
+                        reversed="true"></ion-progress-bar>
+
+      <ion-list-header>
+        <ion-label>
+          Buffer
+        </ion-label>
+      </ion-list-header>
+      <ion-progress-bar [buffer]="buffer"
+                        [value]="progress"></ion-progress-bar>
+
+      <ion-list-header>
+        <ion-label>Colors</ion-label>
+      </ion-list-header>
+      <ion-progress-bar type="indeterminate"
+                        color="secondary"
+                        class="progress-margin"></ion-progress-bar>
+      <br>
+      <ion-progress-bar type="indeterminate"
+                        reversed="true"
+                        color="tertiary"
+                        class="progress-margin"></ion-progress-bar>
+      <br>
+      <ion-progress-bar value="0.25"
+                        buffer="0.5"
+                        color="danger"
+                        class="progress-margin"></ion-progress-bar>
+    </ion-list>
+  </div>
+</ion-content>

@@ -1,0 +1,104 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Range & Reorder</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen
+             class="ion-padding">
+
+  <div>
+    <h3><b>Range</b></h3>
+    <p>The <b>Range</b> slider lets users select from a range of values by moving the slider knob. By default one knob
+      controls the value of the
+      range. This behavior can be customized using <a href="https://ionicframework.com/docs/api/range#dual-knobs">dual
+        knobs</a> . </p>
+
+    <p> By default the Range slider has a minimum value of 0 and a maximum value of 100. This can be configured with the
+      min and
+      max properties.</p>
+    <a href="https://ionicframework.com/docs/api/range"
+       target="_blank">
+      Range API Docs
+    </a>
+    <p>The following is an example for Range.</p>
+    <ion-range aria-label="Temperature">
+      <ion-icon slot="start"
+                name="snow-outline"></ion-icon>
+      <ion-icon slot="end"
+                name="sunny-outline"></ion-icon>
+    </ion-range>
+    <ion-range aria-label="Dual Knobs Range"
+               [dualKnobs]="true"
+               [value]="{ lower: 20, upper: 80 }">
+      <ion-icon slot="start"
+                name="pencil-outline"></ion-icon>
+      <ion-icon slot="end"
+                name="pencil-outline"></ion-icon></ion-range>
+    <ion-range aria-label="Range with pin"
+               [pin]="true"
+               [pinFormatter]="pinFormatter"></ion-range>
+    <ion-range aria-label="Range with ticks"
+               [ticks]="true"
+               [snaps]="true"
+               [min]="0"
+               [max]="10"></ion-range>
+
+  </div>
+
+  <ion-item></ion-item>
+  <div>
+    <h3><b>Reorder</b></h3>
+    <p><b>Reorder</b> is a component that allows an item to be dragged to change its order within a group of items. It
+      must be used within a
+      <a href="https://ionicframework.com/docs/api/reorder-group">reorder group</a> to provide a visual drag and drop
+      interface.
+    </p>
+    <p>The reorder is the anchor used to drag and drop the items. Once the reorder is complete, the
+      <code>ionItemReorder</code> event will
+      be dispatched from the reorder group and the complete method needs to be called.
+    </p>
+    <br>
+    <a href="https://ionicframework.com/docs/api/reorder"
+       target="_blank">
+      Reorder API Docs
+    </a>
+    <br>
+    <p>The following is an example for Reorder.</p>
+    {{message}}
+    <ion-list>
+      <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
+      <!-- Casting $event to $any is a temporary fix for this bug https://github.com/ionic-team/ionic-framework/issues/24245 -->
+      <ion-reorder-group [disabled]="false"
+                         (ionItemReorder)="handleReorder($any($event))">
+        <ion-item>
+          <ion-label> Item 1 </ion-label>
+          <ion-reorder slot="end"></ion-reorder>
+        </ion-item>
+
+        <ion-item>
+          <ion-label> Item 2 </ion-label>
+          <ion-reorder slot="end"></ion-reorder>
+        </ion-item>
+
+        <ion-item>
+          <ion-label> Item 3 </ion-label>
+          <ion-reorder slot="end"></ion-reorder>
+        </ion-item>
+
+        <ion-item>
+          <ion-label> Item 4 </ion-label>
+          <ion-reorder slot="end"></ion-reorder>
+        </ion-item>
+
+        <ion-item>
+          <ion-label> Item 5 </ion-label>
+          <ion-reorder slot="end"></ion-reorder>
+        </ion-item>
+      </ion-reorder-group>
+    </ion-list>
+
+  </div>
+</ion-content>

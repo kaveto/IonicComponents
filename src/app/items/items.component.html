@@ -1,0 +1,356 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Items & More</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen
+             class="ion-padding">
+  <div>
+    <h3><b>Items</b></h3>
+    <p><b>Items</b> are elements that can contain text, icons, avatars, images, inputs, and any other native or custom
+      elements. Items
+      should only be used as rows in a List with other items. Items can be swiped, deleted, reordered, edited, and more.
+      <br><br>
+      <a href="https://ionicframework.com/docs/api/item"
+         target="_blank">
+        Item API Docs
+      </a>
+      <br>
+      <a href="https://ionicframework.com/docs/api"
+         target="_blank">
+        UI Cimponent Docs
+      </a>
+      <br>
+    <p>The following is an example for Items.</p>
+    <ion-list>
+      <ion-list-header lines="full">
+        <ion-label>
+          Icon Items
+        </ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-icon slot="start"
+                  ios="star-outline"
+                  md="star-sharp"></ion-icon>
+        <ion-label>Label</ion-label>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-icon slot="start"
+                  ios="heart-outline"
+                  md="heart-sharp"></ion-icon>
+        <ion-label>Label</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-list-header lines="full">
+        <ion-label>
+          Media Items
+        </ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="/assets/avatar.svg" />
+        </ion-avatar>
+        <ion-label>Label</ion-label>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-avatar slot="start">
+          <img src="/assets/avatar.svg" />
+        </ion-avatar>
+        <ion-label>Label</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-list-header>
+        <ion-label>
+          Sliding Items
+        </ion-label>
+      </ion-list-header>
+
+      <ion-item-sliding>
+        <ion-item>
+          <ion-label>Label</ion-label>
+        </ion-item>
+
+        <ion-item-options side="start">
+          <ion-item-option color="primary">Archive</ion-item-option>
+        </ion-item-options>
+
+        <ion-item-options side="end">
+          <ion-item-option expandable
+                           color="danger">Delete</ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+
+      <ion-item-sliding>
+        <ion-item>
+          <ion-label>Label</ion-label>
+        </ion-item>
+
+        <ion-item-options side="start">
+          <ion-item-option color="primary">
+            <ion-icon slot="icon-only"
+                      ios="share-outline"
+                      md="share-sharp"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+
+        <ion-item-options side="end">
+          <ion-item-option expandable
+                           color="danger">
+            <ion-icon slot="icon-only"
+                      ios="trash-outline"
+                      md="trash-sharp"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+
+  <div>
+    <h3><b>Input</b></h3>
+    <p>The <b>input</b> component is a wrapper to the HTML input element with custom styling and additional
+      functionality. It accepts most of
+      the same properties as the HTML input and integrates with the keyboard on mobile devices.</p>
+    <a href="https://ionicframework.com/docs/api/input"
+       target="_blank">
+      Input API Docs
+    </a>
+    <p>The following is an example for Input.</p>
+
+    <form [formGroup]="ionicForm"
+          (ngSubmit)="processForm($event)">
+      <ion-list lines="full"
+                class="ion-no-margin ion-no-padding">
+        <ion-item>
+          <ion-input formControlName="firstName"
+                     type="text"
+                     placeholder="First Name"
+                     required> </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input formControlName="lastName"
+                     required
+                     type="text"
+                     placeholder="Last Name"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <div class="ion-padding">
+        <ion-button expand="block"
+                    type="submit"
+                    class="ion-text-wrap ion-no-margin">Create account</ion-button>
+      </div>
+    </form>
+
+  </div>
+
+  <ion-item></ion-item>
+  <div>
+    <h3><b>Note</b></h3>
+    <p><b>Notes</b> are text elements generally used as subtitles that provide more information. They are styled to
+      appear grey by
+      default. Notes can be used in an item as metadata text.</p>
+    <br>
+    <a href="https://ionicframework.com/docs/api/note"
+       target="_blank">
+      Note API Docs
+    </a>
+    <br>
+    <p>The following is an example for Note.</p>
+    <ion-note>Default Note </ion-note>
+    <ion-note color="primary">Primary Note </ion-note>
+    <ion-note color="secondary">Secondary Note </ion-note>
+    <ion-note color="tertiary">Tertiary Note </ion-note>
+    <ion-note color="success">Success Note </ion-note>
+    <ion-note color="warning">Warning Note </ion-note>
+    <ion-note color="danger">Danger Note</ion-note>
+    <ion-note color="light">Light Note</ion-note>
+    <ion-note color="medium">Medium Note</ion-note>
+    <ion-note color="dark">Dark Note </ion-note>
+  </div>
+
+
+  <ion-item></ion-item>
+  <div>
+    <h3><b>Select</b></h3>
+    <p><b>Selects</b> are form controls to select an option, or options, from a set of options. When a user taps the
+      select, a dialog appears
+      with all of the options in a large, easy to select list.</p>
+    <p>A select should be used with child <code>ion-select-option</code> elements. If the child
+      option is not given a value
+      attribute then
+      its text will be used as the value.</p>
+    <p>If value is set on the <code>ion-selection-select</code>, the selected option will be chosen based on that
+      value.</p>
+    <br>
+    <a href="https://ionicframework.com/docs/api/select"
+       target="_blank">
+      Select API Docs
+    </a>
+    <br>
+    <p>The following is an example for Select.</p>
+    <ion-list>
+      <ion-item>
+        <ion-select placeholder="Select a Fruit">
+          <div slot="label">Favorite Fruit <ion-text color="danger">(Required)</ion-text></div>
+          <ion-select-option value="apple">Apple</ion-select-option>
+          <ion-select-option value="banana">Banana</ion-select-option>
+          <ion-select-option value="orange">Orange</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <ion-item></ion-item>
+  <div>
+    <h3><b>Toast</b></h3>
+    <p>A <b>toast</b>is a subtle notification commonly used in modern applications. It can be used to provide feedback
+      about an operation or
+      to display a system message. The toast appears on top of the app's content, and can be dismissed by the app to
+      resume
+      user interaction with the app.</p>
+    <br>
+    <a href="https://ionicframework.com/docs/api/toast">Toast API Docs</a>
+    <br>
+    <p>The following is an example for Toast.</p>
+    <ion-button expand="block"
+                (click)="setOpen(true)">Open</ion-button>
+    <ion-toast [isOpen]="isToastOpen"
+               message="This toast will close in 5 seconds"
+               [duration]="5000"
+               (didDismiss)="setOpen(false)"></ion-toast>
+  </div>
+
+  <ion-item></ion-item>
+  <div>
+    <h3><b>Toggle</b></h3>
+    <p><b>Toggles</b>are switches that change the state of a single option. They can be switched on or off by pressing
+      or swiping them.
+      Toggles can also be checked programmatically by setting the checked property.</p>
+    <br>
+    <a href="https://ionicframework.com/docs/api/toggle">Toggle API Docs</a>
+    <br>
+    <p>The following is an example for Toggle.</p>
+    <ion-toggle>Default Toggle</ion-toggle><br /><br />
+    <ion-toggle [checked]="true">Checked Toggle</ion-toggle><br /><br />
+    <ion-toggle [disabled]="true">Disabled Toggle</ion-toggle><br /><br />
+    <ion-toggle [checked]="true"
+                [disabled]="true">Disabled Checked Toggle</ion-toggle>
+  </div>
+
+  <ion-item></ion-item>
+  <div>
+    <h3><b>Toolbar</b></h3>
+    <p>
+      <b>Toolbars</b> are generally positioned above or below content and provide content and actions for the current
+      screen. When
+      placed within the content, toolbars will scroll with the <a
+         href="https://ionicframework.com/docs/api/content">content</a> .
+    </p>
+    <br>
+    <a href="https://ionicframework.com/docs/api/toggle">Toolbar API Docs</a>
+    <br>
+    <p>The following is an example for Toolbar.</p>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button> Start </ion-button>
+      </ion-buttons>
+      <ion-title>Start / End Buttons</ion-title>
+      <ion-buttons slot="end">
+        <ion-button> End </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+
+    <ion-toolbar>
+      <ion-buttons slot="secondary">
+        <ion-button> Secondary </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="primary">
+        <ion-button> Primary </ion-button>
+      </ion-buttons>
+      <ion-title>Primary / Secondary Buttons</ion-title>
+    </ion-toolbar>
+
+    <ion-toolbar>
+      <ion-buttons slot="secondary">
+        <ion-button>
+          <ion-icon slot="icon-only"
+                    name="person-circle"></ion-icon>
+        </ion-button>
+        <ion-button>
+          <ion-icon slot="icon-only"
+                    name="search"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="primary">
+        <ion-button>
+          <ion-icon slot="icon-only"
+                    ios="ellipsis-horizontal"
+                    md="ellipsis-vertical"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>Icon Buttons</ion-title>
+    </ion-toolbar>
+
+    <ion-toolbar>
+      <ion-buttons slot="secondary">
+        <ion-button fill="solid">
+          <ion-icon slot="start"
+                    name="person-circle"></ion-icon>
+          Contact
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="primary">
+        <ion-button fill="solid">
+          Help
+          <ion-icon slot="end"
+                    name="help-circle"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>Solid Buttons</ion-title>
+    </ion-toolbar>
+
+    <ion-toolbar>
+      <ion-buttons slot="secondary">
+        <ion-button fill="outline">
+          <ion-icon slot="start"
+                    name="star"></ion-icon>
+          Star
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="primary">
+        <ion-button fill="outline">
+          Edit
+          <ion-icon slot="end"
+                    name="create"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>Outline Buttons</ion-title>
+    </ion-toolbar>
+
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button default-href="#"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Back Button</ion-title>
+    </ion-toolbar>
+
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button auto-hide="false"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menu Button</ion-title>
+    </ion-toolbar>
+  </div>
+</ion-content>

@@ -1,0 +1,175 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Floating Action Button</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen
+             class="component-content">
+  <div class="ion-padding-start ion-padding-end">
+    <p><b>Fabs</b> are container elements that contain one or more fab buttons. They should be placed in a fixed
+      position that does not scroll with the content. Fabs should have one main fab button. Fabs can also contain one or
+      more fab lists which contain related buttons that show when the main fab button is clicked.
+  </div>
+
+  <ion-list class="home-list"
+            lines="full">
+    <ion-item>
+      <ion-label>
+        <a href="https://ionicframework.com/docs/api/fab"
+           target="_blank">
+          Fabs API Docs
+        </a>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <a href="https://ionicframework.com/docs/api"
+           target="_blank">
+          UI Cimponent Docs
+        </a>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div class="ion-padding-start ion-padding-end ion-padding-bottom">
+    <ion-button id="open-modal"
+                expand="block">Open Demo</ion-button>
+    <ion-modal trigger="open-modal"
+               (willDismiss)="onWillDismiss($event)">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-button (click)="cancel()">Cancel</ion-button>
+            </ion-buttons>
+            <ion-title>Welcome Demo</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <ion-fab horizontal="end"
+                   vertical="top"
+                   slot="fixed"
+                   edge>
+            <ion-fab-button>
+              <ion-icon name="add"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-list>
+              <ion-fab-button color="light">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </ion-fab-button>
+              <ion-fab-button color="light">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </ion-fab-button>
+              <ion-fab-button color="light">
+                <ion-icon name="logo-vimeo"></ion-icon>
+              </ion-fab-button>
+            </ion-fab-list>
+          </ion-fab>
+
+          <ion-fab horizontal="end"
+                   vertical="center"
+                   slot="fixed">
+            <ion-fab-button color="danger">
+              <ion-icon name="add"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
+
+          <ion-fab horizontal="end"
+                   vertical="bottom"
+                   slot="fixed">
+            <ion-fab-button color="light">
+              <ion-icon name="caret-back"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-list side="start">
+              <ion-fab-button color="light">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </ion-fab-button>
+              <ion-fab-button color="light">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </ion-fab-button>
+              <ion-fab-button color="light">
+                <ion-icon name="logo-vimeo"></ion-icon>
+              </ion-fab-button>
+            </ion-fab-list>
+          </ion-fab>
+
+          <ion-fab horizontal="start"
+                   vertical="bottom"
+                   slot="fixed">
+            <ion-fab-button color="dark">
+              <ion-icon name="caret-up"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-list side="top">
+              <ion-fab-button color="light">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </ion-fab-button>
+              <ion-fab-button color="light">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </ion-fab-button>
+              <ion-fab-button color="light">
+                <ion-icon name="logo-vimeo"></ion-icon>
+              </ion-fab-button>
+              <ion-fab-button color="light">
+                <ion-icon name="logo-google"></ion-icon>
+              </ion-fab-button>
+            </ion-fab-list>
+          </ion-fab>
+
+          <ion-fab horizontal="start"
+                   vertical="top"
+                   slot="fixed">
+            <ion-fab-button color="secondary">
+              <ion-icon name="caret-forward"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-list side="end">
+              <ion-fab-button color="light">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </ion-fab-button>
+              <ion-fab-button color="light">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </ion-fab-button>
+              <ion-fab-button color="light">
+                <ion-icon name="logo-vimeo"></ion-icon>
+              </ion-fab-button>
+              <ion-fab-button color="light">
+                <ion-icon name="logo-google"></ion-icon>
+              </ion-fab-button>
+            </ion-fab-list>
+          </ion-fab>
+
+          <ion-fab horizontal="center"
+                   vertical="center"
+                   slot="fixed">
+            <ion-fab-button color="light">
+              <ion-icon name="share"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-list side="top">
+              <ion-fab-button color="primary">
+                <ion-icon name="logo-vimeo"></ion-icon>
+              </ion-fab-button>
+            </ion-fab-list>
+            <ion-fab-list side="end">
+              <ion-fab-button color="dark">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </ion-fab-button>
+            </ion-fab-list>
+            <ion-fab-list side="bottom">
+              <ion-fab-button color="secondary">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </ion-fab-button>
+            </ion-fab-list>
+            <ion-fab-list side="start">
+              <ion-fab-button color="light">
+                <ion-icon name="logo-google"></ion-icon>
+              </ion-fab-button>
+            </ion-fab-list>
+          </ion-fab>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+
+  </div>
+</ion-content>

@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Date & Time Picker</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen
+             class="component-content">
+  <div class="ion-padding-start ion-padding-end">
+    <p><b>Datetime</b> presents a calendar interface and time wheel, making it easy for users to select dates and times.
+      Datetimes are similar to the native input elements of <code>datetime-local</code>, however, Ionic's Datetime
+      component makes it easy to display the date and time in the a preferred format, and manage the datetime values.
+    </p>
+  </div>
+
+  <ion-list class="home-list"
+            lines="full">
+    <ion-item>
+      <ion-label>
+        <a href="https://ionicframework.com/docs/api/datetime"
+           target="_blank">
+          DateTime API Docs
+        </a>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <a href="https://ionicframework.com/docs/api"
+           target="_blank">
+          UI Cimponent Docs
+        </a>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div class="ion-padding-start ion-padding-end ion-padding-bottom">
+    <h6>The following example shows how to set the locale to Spanish (Spain) and uses the hourCycle property to force
+      ion-datetime to use the 12 hour cycle.</h6>
+    <ion-datetime [showDefaultTitle]="true"
+                  locale="es-ES"
+                  hourCycle="h12"> <span slot="time-label">Tiempo</span></ion-datetime>
+
+    <h6>This example shows a datetime with the month-year configuration.</h6>
+    <ion-datetime presentation="month-year"></ion-datetime>
+
+    <h6>This example shows a datetime with the time configuration.</h6>
+    <ion-datetime presentation="time"></ion-datetime>
+
+    <h6>The example below shows the wheel picker with presentation="date-time".</h6>
+    <ion-datetime presentation="date-time"
+                  [preferWheel]="true"></ion-datetime>
+  </div>
+</ion-content>

@@ -1,0 +1,170 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Search Bar, Segment, Spinner</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen
+             class="ion-padding">
+
+  <div>
+    <h3><b>Search Bar</b></h3>
+    <p><b>Searchbars</b> represent a text field that can be used to search through a collection. They can be displayed
+      inside of a toolbar or the
+      main content. A searchbar should be used instead of an input to search lists.</p>
+    <a href="https://ionicframework.com/docs/api/searchbar"
+       target="_blank">
+      Searchbars API Docs
+    </a>
+    <p>The following is an example for Searchbars.</p>
+    <ion-searchbar [debounce]="1000"
+                   (ionInput)="handleInput($event)"></ion-searchbar>
+
+    <ion-list>
+      <ion-item *ngFor="let result of results">
+        <ion-label>{{ result }}</ion-label>
+      </ion-item>
+    </ion-list>
+
+  </div>
+
+  <ion-item></ion-item>
+  <div>
+    <h3><b>Segment</b></h3>
+    <p><b>Segments</b> display a group of related buttons, sometimes known as segmented controls, in a horizontal row.
+      They can be displayed
+      inside of a toolbar or the main content.
+    </p>
+    <p>Their functionality is similar to tabs, where selecting one will deselect all others. Segments are useful for
+      toggling
+      between different views inside of the content. Tabs should be used instead of a segment when clicking on a control
+      should navigate between pages.
+    </p>
+    <br>
+    <a href="https://ionicframework.com/docs/api/segment"
+       target="_blank">
+      Segment API Docs
+    </a>
+    <br>
+    <p>The following is an example for Segment.</p>
+    <ion-segment value="default">
+      <ion-segment-button value="default">
+        <ion-label>Default</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="segment">
+        <ion-label>Segment</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-segment [disabled]="true"
+                 value="disabled">
+      <ion-segment-button value="disabled">
+        <ion-label>Disabled</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="segment">
+        <ion-label>Segment</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    <br>
+    <ion-segment scrollable
+                 value="heart">
+      <ion-segment-button value="home">
+        <ion-icon name="home"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="heart">
+        <ion-icon name="heart"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="pin">
+        <ion-icon name="pin"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="star">
+        <ion-icon name="star"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="call">
+        <ion-icon name="call"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="globe">
+        <ion-icon name="globe"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="basket">
+        <ion-icon name="basket"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="barbell">
+        <ion-icon name="barbell"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="trash">
+        <ion-icon name="trash"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="person">
+        <ion-icon name="person"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <ion-item></ion-item>
+  <div>
+    <h3><b>Spinner</b></h3>
+    <p>The <b>spinner</b> component provides a variety of animated SVG spinners. Spinners are visual indicators that the
+      app is loading content or
+      performing another process that the user needs to wait on.
+    </p>
+    <br>
+    <a href="https://ionicframework.com/docs/api/spinner"
+       target="_blank">
+      Spinner API Docs
+    </a>
+    <br>
+    <p>The following is an example for Spinner.</p>
+    <ion-item>
+      <ion-label>Default</ion-label>
+      <ion-spinner></ion-spinner>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Dots</ion-label>
+      <ion-spinner name="dots"></ion-spinner>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Lines</ion-label>
+      <ion-spinner name="lines"></ion-spinner>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Lines Small</ion-label>
+      <ion-spinner name="lines-small"></ion-spinner>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Lines Sharp</ion-label>
+      <ion-spinner name="lines-sharp"></ion-spinner>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Lines Sharp Small</ion-label>
+      <ion-spinner name="lines-sharp-small"></ion-spinner>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Bubbles</ion-label>
+      <ion-spinner name="bubbles"></ion-spinner>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Circles</ion-label>
+      <ion-spinner name="circles"></ion-spinner>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Circular</ion-label>
+      <ion-spinner name="circular"></ion-spinner>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Crescent</ion-label>
+      <ion-spinner name="crescent"></ion-spinner>
+    </ion-item>
+  </div>
+</ion-content>

@@ -1,0 +1,88 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Breadcrumbs</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen
+             class="component-content">
+  <div class="ion-padding-start ion-padding-end">
+    <p><b>Breadcrumbs</b> are navigation items that are used to indicate where a user is on an app or site. They should
+      be used
+      for large sites and apps with hierarchically arranged pages. Breadcrumbs can be collapsed based on the maximum
+      number
+      that can show, and the collapsed indicator can be clicked on to present a popover with more information or expand
+      the
+      collapsed breadcrumbs.
+    </p>
+  </div>
+
+  <ion-list class="home-list"
+            lines="full">
+    <ion-item>
+      <ion-label>
+        <a href="https://ionicframework.com/docs/api/breadcrumbs"
+           target="_blank">
+          Breadcrumbs API Docs
+        </a>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <a href="https://ionicframework.com/docs/api"
+           target="_blank">
+          UI Cimponent Docs
+        </a>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div class="ion-padding-start ion-padding-end ion-padding-bottom">
+    <h3>Collapsed Indicator Click -- Expand Breadcrumbs</h3>
+    <p>Clicking the collapsed indicator will fire the ionCollapsedClick event. This can be used to, for example, expand
+      the
+      breadcrumbs.
+    </p>
+    <ion-breadcrumbs [maxItems]="maxBreadcrumbs"
+                     (ionCollapsedClick)="expandBreadcrumbs()">
+      <ion-breadcrumb href="#home">Home</ion-breadcrumb>
+      <ion-breadcrumb href="#electronics">Electronics</ion-breadcrumb>
+      <ion-breadcrumb href="#photography">Photography</ion-breadcrumb>
+      <ion-breadcrumb href="#cameras">Cameras</ion-breadcrumb>
+      <ion-breadcrumb href="#film">Film</ion-breadcrumb>
+      <ion-breadcrumb href="#35mm">35 mm</ion-breadcrumb>
+    </ion-breadcrumbs>
+
+    <h3>Collapsed Indicator Click -- Present Popover</h3>
+    <p>The ionCollapsedClick event can also be used to present an overlay (in this case, an ion-popover) showing the
+      hidden
+      breadcrumbs.
+    </p>
+    <ion-breadcrumbs [maxItems]="4"
+                     (ionCollapsedClick)="presentPopover($event)">
+      <ion-breadcrumb href="#home">Home</ion-breadcrumb>
+      <ion-breadcrumb href="#electronics">Electronics</ion-breadcrumb>
+      <ion-breadcrumb href="#photography">Photography</ion-breadcrumb>
+      <ion-breadcrumb href="#cameras">Cameras</ion-breadcrumb>
+      <ion-breadcrumb href="#film">Film</ion-breadcrumb>
+      <ion-breadcrumb href="#35mm">35 mm</ion-breadcrumb>
+    </ion-breadcrumbs>
+    <ion-popover #popover
+                 [isOpen]="isOpen"
+                 (didDismiss)="isOpen = false">
+      <ng-template>
+        <ion-content>
+          <ion-list>
+            <ion-item *ngFor="let breadcrumb of collapsedBreadcrumbs; last as isLast"
+                      [href]="breadcrumb.href"
+                      [lines]="isLast ? 'none' : null">
+              <ion-label>{{ breadcrumb.textContent }}</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-content>
+      </ng-template>
+    </ion-popover>
+  </div>
+</ion-content>

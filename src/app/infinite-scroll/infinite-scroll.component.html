@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Infinite Scroll</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen
+             class="component-content">
+  <div class="ion-padding-start ion-padding-end">
+    <p>The <b>Infinite Scroll</b> component calls an action to be performed when the user scrolls a specified distance
+      from the bottom or top of the page. The expression assigned to the <code>ionInfinite</code> event is called when
+      the user
+      reaches that defined distance. When this
+      expression has finished any and all tasks, it should call the <code>complete()</code> method on the infinite
+      scroll instance.
+  </div>
+
+  <ion-list class="home-list"
+            lines="full">
+    <ion-item>
+      <ion-label>
+        <a href="https://ionicframework.com/docs/api/infinite-scroll"
+           target="_blank">
+          Infinite Scroll API Docs
+        </a>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <a href="https://ionicframework.com/docs/api"
+           target="_blank">
+          UI Cimponent Docs
+        </a>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div class="ion-padding-start ion-padding-end ion-padding-bottom">
+    <ion-list>
+      <ion-item *ngFor="let item of items; let index">
+        <ion-avatar slot="start">
+          <img [src]="'https://picsum.photos/80/80?random=' + index"
+               alt="avatar" />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{item}}</h2>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+      <ion-infinite-scroll-content loading-spinner="bubbles"
+                                   loading-text="Loading more data...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+  </div>
+</ion-content>
